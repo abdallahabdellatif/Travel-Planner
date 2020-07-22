@@ -1,5 +1,5 @@
 export async function handleInputs(e){
-    let city=document.getElementById('city').value
+    let city=document.getElementById('city-entry').value
     let depDate=document.getElementById('departure').value
     let endDate=document.getElementById('end').value
     console.log(city+" "+depDate+" "+endDate)
@@ -24,12 +24,31 @@ export async function handleInputs(e){
         let daysToSpend=Math.floor((date2.getTime()-date1.getTime())/(1000*3600*24))
         // console.log("DaysLeft: "+daysLeft+", DaysToSpend: "+daysToSpend)
         let temprature=23
+        //img TODO
+        let img=new Image()
+        console.log('CORRECT DATA')
+        const response = await fetch('http://localhost:3000/geo', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({myCity:city,left:daysLeft})
+      });
+        let newData={}
+        try {
+            newData = await response.json();
+            console.log(newData)
+        }catch(error) {
+            console.log("HERE COMES THE ERROR , WOOOOO",error);
+        }
+        console.log('Country: '+newData.geonames[0].countryName+", lat: "+newData.geonames[0].lat+", lng: "+newData.geonames[0].lng)
         if(daysLeft<7){
             //current weather
-            Client.newSection(depDate,daysLeft,daysToSpend,"Current")
+            Client.newSection(city,depDate,daysLeft,daysToSpend,temprature,img,"Current")
         }else{
             //future weather prediction
-            Client.newSection(depDate,daysLeft,daysToSpend,"Predicted")
+            Client.newSection(city,depDate,daysLeft,daysToSpend,temprature,img,"Predicted")
         }
     }
 }
