@@ -50,6 +50,10 @@ a {
     background-color: gold;
 }
 //template for travel card and main content
+.empty {
+    text-align: center;
+    color: red;
+}
 .trip-header {
     text-align: center;
 }
@@ -81,7 +85,7 @@ a {
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-#city-img {
+.city-img {
     width :100%;
     height:auto;
 }
@@ -101,8 +105,9 @@ a {
     width: 100%;
     bottom: 0;
     height: auto;
-    left: 0;
-    right: 0;
+    // margin-left: 0;
+    // margin-right: 0;
+    left:0;
 }
 .entries {
     display: flex;
@@ -122,3 +127,8 @@ a {
     display: flex;
     flex-direction: column;
 }
+
+// .errors {
+//     background-color: #eee;
+//     opacity: 0.5;
+// }

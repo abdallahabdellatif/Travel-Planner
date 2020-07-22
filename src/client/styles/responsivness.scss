@@ -19,21 +19,27 @@
 
     .card {
         display: flex;
-        flex-direction: row;
+        flex-direction: row ;
         justify-content: space-around;
+        margin: none;
         margin-bottom: 5%;
 
     }
     //fiding image
+    // .city {
+    //     width: 60%;
+    //     height: 100%;
+    //     z-index:22;
+        
+    // }
+
+    // .city-img {
+    //     height: 100%;
+    //     width: auto;
+    // }
     .city {
-        width: 60%;
-        height: 99%;
+        width:75%;
     }
-
-    #city-img {
-        height: auto;
-    }
-
     .mycity , .mydep , .myend{
         display: flex;
         flex-direction: row;

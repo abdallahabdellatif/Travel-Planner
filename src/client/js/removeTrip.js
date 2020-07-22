@@ -10,4 +10,8 @@ export function removeSection(e){
     console.log(elementId)
     let myElem=document.getElementById(elementId)
     myElem.parentNode.parentNode.parentNode.removeChild(myElem.parentNode.parentNode)
+    //add no trips message if valid
+    if (document.querySelector('.card')===null){
+        document.querySelector('.empty').innerHTML='No Trips Yet'
+    }
 }

@@ -31,6 +31,25 @@ app.post('/geo',async function(req,res){
     // console.log(city+","+days)
     let resp=await fetch(`http://api.geonames.org/searchJSON?q=${city}&maxRows=10&username=${process.env.GEO_USERNAME}`).
     then(response=>{return response.json();}).
-    then(myJson=>{res.send(myJson)}).
+    then(async (myJson)=>{//nest the weather api
+        let lat=Math.floor(myJson.geonames[0].lat)
+        let lng=Math.floor(myJson.geonames[0].lng)
+        //weatherbit takes decimal values 
+        let weth= await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lng}&key=${process.env.WEATHER_API_KEY}`).
+        then(response=>{return response.json();}).
+        then(async(myJson)=>{//another nested api for pixabay imgs
+            let img= await fetch(`https://pixabay.com/api/?key=${process.env.PIXA_API_KEY}&q=${city}&image_type=photo`).
+            then(response=>{return response.json()}).
+            //append newJson to myJson ,is it possible?
+            then(newJson=>{
+                let mergedJson=Object.assign(myJson,newJson)
+                res.send(mergedJson)
+            }).
+            catch(error=>{console.log('stoooop',error)})
+            
+        }).
+        catch(error=>{console.log('stoooop',error)})
+        
+    }).
     catch(error=>{console.log('stoooop',error)})
 })
