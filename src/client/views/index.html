@@ -18,10 +18,29 @@
             </div>
         </nav>
     </header>
-    <div class="trip-header">My Trips</div>
+    <div class="trip-header"><h2>My Trips</h2></div>
     <div class="all-trips">
         <section id="trip1" class="card">
-
+            <div id="city"></div>
+            <div class="text-card">
+                <h3>Venice</h3>
+                <p>Departure Date: 25/7/2020</p>
+                <p>Days Left for Trip: 3</p>
+                <p><strong>Days to be spent in trip </strong>: 5</p>
+                <p>Current Temprature: 25 &#176C</p>
+                <input type="submit" value="Remove" id="del1">
+            </div>
+        </section>
+        <section id="trip2" class="card">
+            <div id="city"></div>
+            <div class="text-card">
+                <h3>Venice</h3>
+                <p>Departure Date: 25/7/2020</p>
+                <p>Days Left for Trip: 3</p>
+                <p><strong>Days to be spent in trip </strong>: 5</p>
+                <p>Current Temprature: 25 &#176C</p>
+                <input type="submit" value="Remove" id="del2">
+            </div>
         </section>
     </div>
     <div class="add-trip">
@@ -31,9 +50,9 @@
                     <label for="city">City</label>
                     <input type="text" name="" id="city" placeholder="cairo">
                 </div>
-                <div clsss="mydep">
+                <div class="mydep">
                     <label for="departure">Departure date</label>
-                    <input type="date" name="" id="departure">
+                    <input type="date" name="" id="departure" >
                 </div>
                 <div class="myend">
                     <label for="end">End date</label>
@@ -42,7 +61,7 @@
             </div>
             <input type="submit" value="Add Trip" id="add-a-trip">
         </div>
-        <div class="errors"></div>
+        <div id="errors"></div>
     </div>
 
 </body>

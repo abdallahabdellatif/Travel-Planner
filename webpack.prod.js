@@ -2,6 +2,9 @@ const path = require("path")
 const webpack = require("webpack")
 const HtmlWebPackPlugin=require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 //add img loader
 module.exports = {
     mode: 'production',
@@ -21,8 +24,14 @@ module.exports = {
                 },
                 {
                     test: /\.scss$/,
-                    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                    use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
                 },
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [
+                    'file-loader',
+                ],
+           },
         ]
 },
     plugins: [
@@ -38,8 +47,12 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-    })
+    }),
+         new MiniCssExtractPlugin({ filename: "[name].css" })
     ],
+    optimization: {
+        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist/'),

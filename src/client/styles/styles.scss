@@ -1,9 +1,11 @@
 h1,
-h2,
-h3 {
+h2 {
     color: #383e56;
     font-weight: 600;
     line-height: 1.5rem;
+}
+h3 {
+    color: white;
 }
 body {
     background-color: lightcyan;
@@ -47,6 +49,48 @@ a {
     box-shadow: 0 8px 16px 0 rgba(253, 205, 205, 0.2);
     background-color: gold;
 }
+//template for travel card and main content
+.trip-header {
+    text-align: center;
+}
+
+.all-trips {
+    margin-top: 4%;
+}
+.card {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 8%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color:#204051;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+}
+
+.text-card {
+    text-align: center;
+    margin:auto;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+#city-img {
+    width :100%;
+    height:auto;
+}
+#city {
+    align-content: center;
+    width: 100%;
+    height: 60%;
+
+}
 
 //fixed bar at bottom
 .add-trip {
@@ -58,6 +102,7 @@ a {
     bottom: 0;
     height: auto;
     left: 0;
+    right: 0;
 }
 .entries {
     display: flex;
@@ -69,11 +114,11 @@ a {
 
 .ins {
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     flex-direction: column;
 }
 
 .mycity , .mydep , .myend{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }

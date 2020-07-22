@@ -3,18 +3,34 @@
         display: flex;
         flex-direction: row;
         /* margin-bottom: 20px; */
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
     }
     
-    .trip-header {
-        text-align: center;
-    }
     .mylinks {
         display: flex
     }
 
     .ins {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 5%;
+
+    }
+    //fiding image
+    #city {
+        width: 60%;
+        height: auto;
+    }
+
+    .mycity , .mydep , .myend{
         display: flex;
         flex-direction: row;
     }
