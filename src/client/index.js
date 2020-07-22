@@ -1,2 +1,9 @@
 import './styles/styles.scss'
-alert("haii")
+import './styles/responsivness.scss'
+import { handleInputs } from './js/inputsHandle'
+
+export{
+    handleInputs
+}
+
+document.getElementById('add-a-trip').addEventListener('click',handleInputs)

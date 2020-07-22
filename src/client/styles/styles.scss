@@ -1,5 +1,79 @@
-.hey {
-    background-color: black;
-    color: blanchedalmond;
+h1,
+h2,
+h3 {
+    color: #383e56;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+body {
+    background-color: lightcyan;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+// navbar stufffff
+a {
+    margin-right: 10px;
+    font-weight: 300;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* margin-bottom: 20px; */
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.trip-header {
+    margin-top: 5%;
+}
+
+.links {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    color: darkblue;
+    margin:2%;
+    width: 100%;
+}
+
+.links:hover {
+    box-shadow: 0 8px 16px 0 rgba(253, 205, 205, 0.2);
+    background-color: gold;
+}
+
+//fixed bar at bottom
+.add-trip {
+    position: fixed;
     text-align: center;
+    background-color: indigo;
+    color: ivory;
+    width: 100%;
+    bottom: 0;
+    height: auto;
+    left: 0;
+}
+.entries {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 60%;
+}
+
+.ins {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.mycity , .mydep , .myend{
+    display: flex;
+    flex-direction: row;
 }

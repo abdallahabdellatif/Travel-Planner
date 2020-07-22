@@ -3,17 +3,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Travel Lad</title>
-    <link rel="stylesheet" href="../styles/styles.scss">
+    <!-- <link rel="stylesheet" href="../styles/styles.scss"> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 </head>
 <body>
-    <div class="hey">
-        hey there
+    <header>
+        <nav class="navbar">
+            <h1><i class="fas fa-plane"></i>Travelamigo</h1>
+            <div class="mylinks">
+                <a href="index.html" class="no-underline links">Home</a>
+                <a href="http://www.google.com" class="no-underline links">Contact</a>
+                <a href="http://www.google.com" class="no-underline links">About</a>
+            </div>
+        </nav>
+    </header>
+    <div class="trip-header">My Trips</div>
+    <div class="all-trips">
+        <section id="trip1" class="card">
+
+        </section>
     </div>
-    <div class="mid">
-        middle man
+    <div class="add-trip">
+        <div class="entries">
+            <div class="ins">
+                <div class="mycity">
+                    <label for="city">City</label>
+                    <input type="text" name="" id="city" placeholder="cairo">
+                </div>
+                <div clsss="mydep">
+                    <label for="departure">Departure date</label>
+                    <input type="date" name="" id="departure">
+                </div>
+                <div class="myend">
+                    <label for="end">End date</label>
+                    <input type="date" name="" id="end">
+                </div>
+            </div>
+            <input type="submit" value="Add Trip" id="add-a-trip">
+        </div>
+        <div class="errors"></div>
     </div>
-    <div class="bye">
-        byee
-    </div>
+
 </body>
 </html>

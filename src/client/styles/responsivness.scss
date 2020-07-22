@@ -1,0 +1,22 @@
+@media(min-width: 700px)  { 
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        /* margin-bottom: 20px; */
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .trip-header {
+        text-align: center;
+    }
+    .mylinks {
+        display: flex
+    }
+
+    .ins {
+        display: flex;
+        flex-direction: row;
+    }
+}
+// and (max-width: 900px)
