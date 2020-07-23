@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-//add img loader
+const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     mode: 'production',
     devtool: 'source-map',
@@ -24,14 +24,14 @@ module.exports = {
                 },
                 {
                     test: /\.scss$/,
-                    use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
-                },
-                {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use: [
-                    'file-loader',
-                ],
-           },
+                    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                }
+                // {
+                //     test: /\.(png|svg|jpg|gif)$/,
+                //     use: [
+                //     'file-loader',
+                // ],
+        //    },
         ]
 },
     plugins: [
@@ -48,7 +48,7 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
     }),
-         new MiniCssExtractPlugin({ filename: "[name].css" })
+         new WorkboxPlugin.GenerateSW()
     ],
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],

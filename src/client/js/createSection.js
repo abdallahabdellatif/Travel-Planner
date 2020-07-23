@@ -42,6 +42,7 @@ function newSection(city,depDate,left,spent,incomingData) {
     //append whole section
     document.body.querySelector('.all-trips').appendChild(newSec)
     sections++;
+    return sections
     // console.log(sections)
 }
 export{
